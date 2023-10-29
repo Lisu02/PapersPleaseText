@@ -69,7 +69,7 @@ public class Main {
 
 
 
-
+            terminal.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
