@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DokumentyPetenta;
 
 import java.util.Arrays;
 
@@ -53,7 +53,8 @@ public class Paszport {
             String miejsceWydaniaPaszportu,
             String[] dataWygasnieciaPaszportu,
             String krajPochodzenia,
-            String kodPaszportu
+            String kodPaszportu,
+            int kodBledu
     ){
         this.imie = imie;
         this.dataUrodzin = dataUrodzin;
@@ -61,6 +62,7 @@ public class Paszport {
         this.dataWygasnieciaPaszportu = dataWygasnieciaPaszportu;
         this.krajPochodzenia = krajPochodzenia;
         this.kodPaszportu = kodPaszportu;
+        this.kodBledu = 0;
     };
 
     @Override

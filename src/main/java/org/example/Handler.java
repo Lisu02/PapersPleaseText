@@ -10,6 +10,7 @@ public class Handler {
     //KLASA DO OBSŁUGI WYBORU OPCJI
     //
 
+    private Gra gra;
     private Terminal terminal;
     private Menu menu;
     private TextGraphics textGraphics;
@@ -20,7 +21,7 @@ public class Handler {
     public void addMenu(Menu menu){this.menu = menu;}
     public void addTextGraphics(TextGraphics textGraphics){this.textGraphics = textGraphics;}
 
-    public void handleOptionSelection(String opcja) throws IOException {
+    protected boolean handleOptionSelection(String opcja) throws IOException {
 
         switch(opcja){
             case "WYJDZ Z GRY":
@@ -36,7 +37,7 @@ public class Handler {
             case "NOWA GRA":
                 System.out.println("NOWA GRA");
                 //Inicjalizacja gry oraz dodanie do menu obiektów
-                menu.printGra(0,0);
+                menu.printGra(new Petent());
                 menu.klawiszeGra();
                 break;
             case "OPCJA 1":
@@ -52,18 +53,28 @@ public class Handler {
             case "WRÓĆ":
                 System.out.println("WRÓĆ");
                 menu.printMenu(0);
-                menu.klawiszeMenu();
-                break;
+                return false;
+            //klawiszeMenu();
+            //break;
             case "ZATWIERDŹ WIZE":
                 terminal.bell();
                 System.out.println("ZATWIERDŹ WIZE");
+                menu.printGra(new Petent());
                 //menu.zmienPetent();
                 break;
             case "ODRZUĆ WIZE":
                 terminal.bell();
                 System.out.println("ODRZUĆ WIZE");
+                menu.printGra(new Petent());
                 //menu.zmienPetent();
                 break;
+            case "PODSTAWOWE ZASADY":
+                System.out.println("PODSTAWOWE ZASADY");
+                break;
+            case "REGIONY":
+                System.out.println("REGIONY");
+                break;
         }
+        return true;
     }
 }
