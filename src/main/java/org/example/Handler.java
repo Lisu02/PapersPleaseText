@@ -52,7 +52,7 @@ public class Handler {
                 break;
             case "WRÓĆ":
                 System.out.println("WRÓĆ");
-                menu.printMenu(0);
+                menu.printMenu(2); //TODO BLAD Z WYJSCIA MENU
                 return false;
             //klawiszeMenu();
             //break;

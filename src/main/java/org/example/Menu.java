@@ -43,6 +43,107 @@ public class Menu {
     private int opcjeGraX = 2;
     private int opcjeGraY = 1;
 
+    private String[] twarz = {
+            "........................................",
+            "..............'''',,,,,,,''''...........",
+            ".............',;:lodooolc;,,''..........",
+            "...........,:cldk0KKKKK0Okoc:,'.........",
+            ".........,:clokKKKKKKKKKKK0xol:,'.......",
+            "....''';llllldkO00KKKKKKKKOkxolll;''....",
+            "....''':lolllllodxOOOOOOkkxdddollc,''...",
+            "...'''';clllcccccloooollc::ccccc;,''''..",
+            ".',,'''';lc;;;,,,;;:clol;''',;;;,'''''..",
+            "';c:,'',:c:;;,,,,;:oxxl;,''',::c:,'',;'.",
+            "',;;:,,:lc:;,'''',lOK0o,''''''',;,',;;,'",
+            "',:;;;,:looolc:,,cdO00k:'',;;;;;;,'',:;'",
+            "',:;;;,:looolc:,,cdO00k:'',;;;;;;,'',:;'",
+            ".,',,'',;cdoc:;,,;:ccc:,'',:lol;''',,;,.",
+            "..,::,'',;;;;;;,,,,''''',',;::;''',;,'..",
+            "...''.''',,;;;,,;;;;'',;:;',;:;'''......",
+            "........',,'';:::ccc::cccc;'',,'........",
+            "........'''',clccccccc:clo:,'''.........",
+            "''.......'''';;,''''''',;:;''''.........",
+            "''........'''''''''''''''''''.......''''",
+            "'''.........''''''''''''''''........''''",
+            "'''....'......''''''''''............''''"
+    };
+
+    private String[] twarzT = {
+            "...............'',;;;;;;,''.............",
+            "...........';:cloooodooooolc:,'.........",
+            ".......,::clodxkkkOkkkkkxdoodol:'.......",
+            ".....,coddodk0KKKKKKKKKKK0kdooooc,......",
+            ".....:ooooxOKKKKKKKKKKKKKKKOdooool;.....",
+            ".....:oooodxkOO00KKKKK0OOkkxdooooo:.....",
+            ".....:olccccclodxxxkkkxdolllcclloo:.....",
+            ".....''':llll:,,;::ccc:;,,;cllc;;;'.....",
+            ".''...,d0KKKK0o'....'...lkOKKK0kl,..',..",
+            "'c;...,xKKKKK0d'':,;l:''o0KKKKK0d,..';;.",
+            ":c,.,:',ldodl:'.,ddldl:,,;clodl;...';c:'",
+            "cl,.;dxl,...,,''o0Ol::oo:,.''.';:'..,lc'",
+            "':;''cddollll:',x0kc,,,coollllll:'.':c,.",
+            "..,'.'coooooc;'.;lo:,.';loooooo;....''..",
+            "......;oooooooc'..'..'cooooooooc,.......",
+            "......:oooooooo;...,:coooooooool,.......",
+            ".......:oooooolc:,,:llllooooooo:........",
+            ".......,looool;;:cc:;:;;coooool;..,,....",
+            ".....''.;ooooooolcc:;:looooool,.',;,....",
+            ".....,,'.:ooooooolccccooooool;.',;;;'...",
+            "....,::,..:ooooooooooooooool;.',;;;;,'..",
+            "...':lc:;'',:looooooooooll:'.',;;;;;;,.."
+};
+
+    private String[] twarzZla = {
+            "dddddddddddddddddddddddddddddddddddddddd",
+            "dddddddddddollc::::clllllllloddddddddddd",
+            "dddddddddoc;,,,,,',,,,,,,,,,;coddddddddd",
+            "ddddddddd:,,,,,,,,,,',,,,,,,,,;cdddddddd",
+            "dddddddoc;,,,',,,,',,,,,,,,,,,,,codddddd",
+            "dddddoc;,,'',,',,',;;;;;,,,,,,,',;oddddd",
+            "ddddo:,',,,,,,,;:codddddl,,,',,',,:odddd",
+            "ddddd:',,,,,,:oddddddddddl,,,,,,,,,:oddd",
+            "ddddl;',,,,:odddddddddddddo:;,,',,':oddd",
+            "dddd:,,',',coolccclodoolc:lolc;,,,,:dddd",
+            "ddddo:',;,,;;;,,,,:odoc;,,,;;;;,;;:odddd",
+            "dddddl;:l:,;:ccc:;ldddoc:::cc:;,:c:odddd",
+            "ddddddol:;,:lllc;;lddlccclllloc,,;lddddd",
+            "ddddddddl;,,:ll:;;:cccc;;:looc:,;ldddddd",
+            "dddddddddo:,,,;coc;',:llll:;,,,:oddddddd",
+            "ddddddddddccoccllc::::c:;:lc:coodddddddd",
+            "ddddddddddoddoooooc;;;:looollddddddddddd",
+            "dddddddddddl:;:cool;,,,coo::ldoodddddddd",
+            "dddddddddolclc;,,;;,,,,,;;,cddc:oddddddd",
+            "ddddddlc:::cddolc:::::::clooddocllcclddd",
+            "dddlc:,,,:cldddddddddddddddddddo:,,',;;;",
+            "dl:,,,,,,,:oddddddddddddddddddo:,,,,,,,,",
+    };
+
+    private String[] olaboga = {
+            "dddddddddddddddddddddddddddddddddddddddd",
+            "dddddddddddddddddddddddddddddddddddddddd",
+            "ddddddddddddolc:::::::cllodddddddddddddd",
+            "ddddddddoc::;,,,,'''',,,,,:coddddddddddd",
+            "ddddddl:;,,,,,,,,,,,,,,',,,,;coddddddddd",
+            "dddddl;,,,,,,,,,,,,,,,,,,,,,,,,cdddddddd",
+            "ddddl;,',,,,,,,,,,,,,,,,,,,,,',,cddddddd",
+            "dddo:,',',,,,,,',,,,,,',,,,,,,,';ldddddd",
+            "dddc,',,'',,,,,,,,,,,,',,,,,,',,,;lddddd",
+            "ddl;,,,,,,;;cl;,;c:;;;,,,;:c;,,,'':odddd",
+            "dl;,,',,,:oollc::ldolc:;:lddl,',,':odddd",
+            "dc,,,,,',cdc.,.lccldl.,.lclddl,',,,:oddd",
+            "dc,,:c:,,cdololcoddolc:cldddc,,cc,:odddd",
+            "dc,,,::,':dddddoolodoooodddl,,,:;,:odddd",
+            "do:,',,',:dddddoc::c:codddo:,,,''':odddd",
+            "dddo:,,,,;lddddoccccdcodddc,',',';lddddd",
+            "dddddl,,,,:ddddol::::coddc,,,',:cldddddd",
+            "ddddddo:,,;coddddollloddc,,:cclddddddddd",
+            "dddddddo:,,;:clooddool:::ccodddddddddddd",
+            "ddddddddc:ldolc::lc:;:cloccodddddddddddd",
+            "ddddddolccddddddoodddddddl:coddddddddddd",
+            "ol:clccloddddddoodddddddddollllooodddddd",
+    };
+
+
     private Petent petent;
 
     private TextColor bialy = TextColor.ANSI.WHITE;
@@ -137,12 +238,26 @@ public class Menu {
         textGraphics.fillRectangle(new TerminalPosition(0,25),terminalSize.withColumns(40).withRows(1),'X');
         textGraphics.fillRectangle(new TerminalPosition(0,0),terminalSize.withColumns(1).withRows(25),'X');
         textGraphics.fillRectangle(new TerminalPosition(40,0),terminalSize.withColumns(1).withRows(26),'X');
+        for (int i = 0;i<22;i++){
+            textGraphics.putString(50,25+i,twarz[i]);
+        }
+
+        for (int i = 0;i<twarzT.length;i++){
+            textGraphics.putString(100,25+i,twarzT[i]);
+        }
+        for (int i = 0;i< twarzZla.length;i++){
+            textGraphics.putString(150,25+i,twarzZla[i]);
+        }
+        for (int i = 0;i< olaboga.length;i++){
+            textGraphics.putString(200,25+i,olaboga[i]);
+        }
 
 
     }
     private void printGraPetent(Petent petent){
         //ROZDZIELIC PRINTOWANIE PASZPORTU I INNYCH DOKUMENTÓW ZAMIAST
         //SAMYCH INFORMACJI O PETENCIE
+        //TODO PRINT RODZAJ DOKUMENTU U GÓRY CZYLI PASZPORT DOWÓD OSOBIST LUB POZWOLENIE NA WJAZD
         if(!isNull(petent)){
             String[] imie = petent.toString().split("/");
             int tmp = 0;
@@ -260,7 +375,7 @@ public class Menu {
                         break;
                     case Backspace:
                         warunek = false;
-                        printMenu(0);
+                        printMenu(selectedOptionY);
                         //klawiszeMenu();
                         break;
                     case Escape:

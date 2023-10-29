@@ -20,6 +20,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.TerminalResizeListener;
+import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 
 import java.awt.*;
 import java.awt.font.ShapeGraphicAttribute;
@@ -33,7 +34,11 @@ public class Main {
 
     //public Terminal terminal;
     public static void main(String[] args) throws IOException {
+        Font myFont = new Font("Monospaced",Font.BOLD,13);
+        AWTTerminalFontConfiguration myFontConfiguration = AWTTerminalFontConfiguration.newInstance(myFont);
         DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();
+        defaultTerminalFactory.setForceAWTOverSwing(true);
+        defaultTerminalFactory.setTerminalEmulatorFontConfiguration(myFontConfiguration);
         TerminalSize terminalSize = new TerminalSize(240,67);
          defaultTerminalFactory.setInitialTerminalSize(terminalSize); // Ustaw rozmiar terminala
         Terminal terminal = null;
