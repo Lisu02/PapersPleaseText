@@ -69,6 +69,16 @@ public class Petent {
         return imie + "/" + Arrays.toString(dataUrodzin) + "/" + miejsceWydaniaPaszportu + "/" + Arrays.toString(dataWygasnieciaPaszportu) + "/" + krajPochodzenia + "/" + kodPaszportu;
     }
 
+    public Paszport getPaszport(){
+        return paszport;
+    }
+    public DowodOsobisty getDowodOsobisty(){
+        return dowodOsobisty;
+    }
+    public PozwolenieNaWjazd pozwolenieNaWjazd(){
+        return pozwolenieNaWjazd;
+    }
+
 
 
 

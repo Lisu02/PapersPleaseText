@@ -1,9 +1,12 @@
 package org.example.DokumentyPetenta;
 
+import org.example.DaneGryDoGenerowania.ZbiorTwarzy;
+
 import java.util.Arrays;
 
 public class Paszport {
 
+    private String[] twarzPetenta;
     private String imie;
     private String[]  dataUrodzin ;
     private String miejsceWydaniaPaszportu ;
@@ -14,6 +17,7 @@ public class Paszport {
     protected Integer kodBledu = 0;
 
     public Paszport() {
+        this.twarzPetenta = ZbiorTwarzy.getTwarz();
         this.imie = "TestImie TestNazwisko";
         this.dataUrodzin = new String[]{"26", "8", "2002"};
         this.miejsceWydaniaPaszportu = "Test";
@@ -67,16 +71,11 @@ public class Paszport {
 
     @Override
     public String toString() {
-        return "Paszport{" +
-                "Imie i nazwisko -> " + imie + '\'' +
-                ", Urodzony -> " + Arrays.toString(dataUrodzin) +
-                ", Wydany w -> " + miejsceWydaniaPaszportu + '\'' +
-                ", DataWygasniecia -> " + Arrays.toString(dataWygasnieciaPaszportu) +
-                ", " + krajPochodzenia + '\'' +
-                ", kodPaszportu='" + kodPaszportu + '\'' +
-                '}';
+        return imie + "/" + Arrays.toString(dataUrodzin) + "/" + miejsceWydaniaPaszportu + "/" + Arrays.toString(dataWygasnieciaPaszportu) + "/" + krajPochodzenia + "/" + kodPaszportu;
     }//TODO: PRZYSTOSOWAĆ TOSTRING DO WYPISYWANIA KONSOLI
-
+    public String[] getTwarzPetenta(){ //WYPISYWANIE TWARZa
+        return twarzPetenta;
+    }
 
 
     //GETTERY I SETTERY

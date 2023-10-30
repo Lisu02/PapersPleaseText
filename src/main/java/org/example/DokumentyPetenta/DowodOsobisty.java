@@ -2,6 +2,7 @@ package org.example.DokumentyPetenta;
 
 import org.example.DaneGryDoGenerowania.Dystrykty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class DowodOsobisty {
@@ -31,5 +32,10 @@ public class DowodOsobisty {
         wzrost = generator.nextInt(35) + 160;
         waga = generator.nextInt(35) + 55;
     }
+
+    @Override
+    public String toString() {
+        return imie + "/" + dystrykt + "/" + Arrays.toString(dataUrodzenia) + "/" + wzrost + "/" + waga;
+    }//TODO: PRZYSTOSOWAĆ TOSTRING DO WYPISYWANIA KONSOLI
 
 }
