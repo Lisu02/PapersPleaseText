@@ -3,10 +3,10 @@ import java.util.Random;
 public class ImionaPetentow {
 
     private static String[] imiona = {
-            "Aarya","Akshara","Dragan","Carlos","Kayden","Leonardo","Natalie","Pedro","Jewgenij"
+            "Aarya","Akshara","Dragan","Carlos","Kayden","Leonardo","Natalie","Pedro","Jewgenij","Pablo","Antonio","Leonarde"
     };
     private static  String[] nazwiska = {
-      "Petkovski","Kostovski","Kavaliauskas","Ferrari","Abuladze","Durand","Hendriks","Lopes","Wagner","Prigozin"
+      "Petkovski","Kostovski","Kavaliauskas","Ferrari","Abuladze","Durand","Hendriks","Lopes","Wagner","Papner","Kapritiozo"
     };
 
     private static Random random = new Random();

@@ -55,6 +55,9 @@ public class Menu {
     private int opcjeGraX = 2;
     private int opcjeGraY = 1;
 
+    private int przerobieniPetenci = 0;
+    private int poprawniPetenci = 0;
+
 
     private Petent petent;
 
@@ -156,25 +159,24 @@ public class Menu {
         textGraphics.fillRectangle(new TerminalPosition(0,0),terminalSize.withColumns(1).withRows(26),'X');
         textGraphics.fillRectangle(new TerminalPosition(80,0),terminalSize.withColumns(1).withRows(26),'X');
 
+        textGraphics.putString(110,60,"Przerobieni petenci" + przerobieniPetenci);
+        textGraphics.putString(110,62,"Poprawni petenci" + poprawniPetenci);
+
+
 
     }
     private void printGraPetent(Petent petent){
-        //ROZDZIELIC PRINTOWANIE PASZPORTU I INNYCH DOKUMENTÓW ZAMIAST
-        //SAMYCH INFORMACJI O PETENCIE
-        //TODO PRINT RODZAJ DOKUMENTU U GÓRY CZYLI PASZPORT DOWÓD OSOBIST LUB POZWOLENIE NA WJAZD
+
         //PRINT PASZPORTU
         if(!isNull(petent)){
             String[] imie = petent.getPaszport().toString().split("/");
             String[] twarz = petent.getPaszport().getTwarzPetenta();
-
-            //textGraphics.putString(new TerminalPosition(45,2),"PASZPORT");
-
-
-
+            textGraphics.putString(new TerminalPosition(45,2),"PASZPORT");
+            //TWARZ
             for(int i = 0 ; i < twarz.length ; i++){
                 textGraphics.putString(new TerminalPosition(2,i+2),twarz[i]);
             }
-
+            //DANE Z PASZPORTU
             int tmp = 0;
             for(int i = 2; i <= 12 ; i +=2)
             {
@@ -185,15 +187,22 @@ public class Menu {
             textGraphics.putString(new TerminalPosition(2,2),"BRAK PASZPORTU PETENT == NULL");
         }
 
-//        for(int i = 0 ; i < paper.length ; i++){
-//            textGraphics.putString(new TerminalPosition(45,i+2),paper[i]);
-//        }
-
         if(!isNull(petent.getDowodOsobisty())){
-            //Petent ma dowodOsobisty
-            String[] dane = petent.getDowodOsobisty().toString().split("/");
-
+            System.out.println(petent.getDowodOsobisty().toString());
+            String[] obciete = petent.getDowodOsobisty().toString().split("/");
+            int tmp = 0;
+            for(int i = 2;i<12;i +=2){
+                textGraphics.putString(new TerminalPosition(120,i+2),obciete[tmp]);
+                tmp += 1;
+            }
+            System.out.println(Arrays.toString(obciete));
+            System.out.println(obciete[0]);
         }
+
+
+
+        String kod = String.valueOf(petent.getKodBledu());
+        textGraphics.putString(45,22,kod);
 
     }
 

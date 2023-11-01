@@ -21,7 +21,7 @@ public class Petent {
     private String krajPochodzenia;
     private String kodPaszportu;
 
-    private int kodBledu;
+    public int kodBledu; //Petent
     private Paszport paszport;
     private PozwolenieNaWjazd pozwolenieNaWjazd;
     private DowodOsobisty dowodOsobisty;
@@ -38,8 +38,8 @@ public class Petent {
         this.kodBledu = 0;
         paszport = new Paszport();
         paszport.setDanePaszportu(ImionaPetentow.giveImie(this.imie,kodBledu),dataUrodzin,this.miejsceWydaniaPaszportu,dataWygasnieciaPaszportu,krajPochodzenia,kodPaszportu,this.kodBledu);
-        if(krajPochodzenia.equals("ARZTOCKA")){dowodOsobisty = new DowodOsobisty(kodBledu);}
-        else {pozwolenieNaWjazd = new PozwolenieNaWjazd();}
+        if(krajPochodzenia.equals("ARZTOCKA")){dowodOsobisty = new DowodOsobisty(imie,dataUrodzin,kodBledu);}
+        else {pozwolenieNaWjazd = new PozwolenieNaWjazd(imie,kodPaszportu,kodBledu);}
 
     }
 
@@ -61,7 +61,7 @@ public class Petent {
         this.kodPaszportu = kodPaszportu;
         paszport = new Paszport(imie,dataUrodzin,miejsceWydaniaPaszportu,dataWygasnieciaPaszportu,krajPochodzenia,kodPaszportu,kodBledu);
         if(krajPochodzenia.equals("ARZTOCKA")){dowodOsobisty = new DowodOsobisty(imie,dataUrodzin,kodBledu);}
-        else {pozwolenieNaWjazd = new PozwolenieNaWjazd();}
+        else {pozwolenieNaWjazd = new PozwolenieNaWjazd(imie,kodPaszportu,kodBledu);}
     }
 
     @Override
@@ -69,17 +69,18 @@ public class Petent {
         return imie + "/" + Arrays.toString(dataUrodzin) + "/" + miejsceWydaniaPaszportu + "/" + Arrays.toString(dataWygasnieciaPaszportu) + "/" + krajPochodzenia + "/" + kodPaszportu;
     }
 
+    public int getKodBledu(){
+        return kodBledu;
+    }
     public Paszport getPaszport(){
         return paszport;
     }
     public DowodOsobisty getDowodOsobisty(){
         return dowodOsobisty;
     }
-    public PozwolenieNaWjazd pozwolenieNaWjazd(){
+    public PozwolenieNaWjazd getPozwolenieNaWjazd(){
         return pozwolenieNaWjazd;
     }
-
-
 
 
 }
