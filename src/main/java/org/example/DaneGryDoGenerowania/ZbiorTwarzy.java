@@ -177,6 +177,11 @@ public class ZbiorTwarzy {
                 System.out.println(s);
             }
 
+            String [][] test = {
+                    {"imie","kod"},
+                    {"Powrot"}
+            };
+
         }
 
 

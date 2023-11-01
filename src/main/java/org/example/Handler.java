@@ -70,10 +70,25 @@ public class Handler {
                 break;
             case "PODSTAWOWE ZASADY":
                 System.out.println("PODSTAWOWE ZASADY");
+                menu.printKsiazka("PODSTAWOWE ZASADY");
                 break;
-            case "REGIONY":
-                System.out.println("REGIONY");
+            case "PAŃSTWA":
+                System.out.println("PAŃSTWA");
+                menu.printKsiazka("PAŃSTWA");
                 break;
+            case "ARZTOCKA":
+                System.out.printf("KsiazkaArztocka");
+                menu.printKsiazka("");
+                break;
+            case "OBRISTAN":
+                System.out.printf("KsiazkaObristan");
+                break;
+            case "ZJEDNOCZONA FEDERACJA":
+                System.out.printf("KsiazkaZjedno.Federacja");
+                break;
+            case "ZAWRÓĆ":
+                System.out.println("ZAWRÓĆ KSIAZKA");
+                menu.printKsiazka("ZAWRÓĆ");
         }
         return true;
     }

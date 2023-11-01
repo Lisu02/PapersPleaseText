@@ -9,6 +9,7 @@ import com.googlecode.lanterna.graphics.TextImage;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import org.example.DaneGryDoGenerowania.Ksiazka;
 import org.example.DokumentyPetenta.Paszport;
 
 import java.io.IOException;
@@ -37,6 +38,8 @@ public class Menu {
     private String[] napisyMenu = {"NOWA GRA","OPCJE","WYJDZ Z GRY"};
     private String[] napisyOpcje = {"OPCJA 1","OPCJA 2","WRÓĆ"};
     private String[] napisyGra = {"ZATWIERDŹ WIZE", "ODRZUĆ WIZE"};
+
+    private String[] napisyStrona = {"PODSTAWOWE ZASADY","MAPA PAŃSTW"};
 
 //    private String[] paper = {
 //            " ____   _    ____ ____  ____   ___  ____ _____ ",
@@ -130,6 +133,11 @@ public class Menu {
         terminal.flush();
     }
 
+    public void printKsiazka(String wybranaOpcja){
+        String [] stronaDoRysowania = Ksiazka.getStrona(wybranaOpcja);
+
+    }
+
     public void printGra(int selectedOptionX,int selectedOptionY)throws  IOException{
        // printGraObwody();
        // printGraPetent(new Petent()); //TODO POWSTRZYMAC CALY CZAS GENEROWANIE NOWEGO PETENTA
@@ -188,6 +196,8 @@ public class Menu {
         }
 
     }
+
+
     private void printGraPetent(){}//TODO:OPTYMALIZACJA ZEBY NIE DRUKOWAC TEGO SAMEGO CO SIE NIE ZMIENILO PO STRZALCE NA PRZYKLAD CHOCIAZ JUZ ZROBNIONE JESTCHGYBA
     private void printGraPrzyciski(){
         for (int i = 0; i < napisyGra.length; i++) {
