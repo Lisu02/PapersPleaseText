@@ -24,4 +24,17 @@ public class PozwolenieNaWjazd {
         czasPrzyjazdu = CelePrzyjazdu.getCzasPrzyjazdu(celPrzyjazdu);
         dataWaznosci = "TestDATA";
     }
+
+    public int getKodBledu(){
+        return kodBledu;
+    }
+    @Override
+    public String toString(){
+        return imie +"/" + kodPaszportu + "/" + celPrzyjazdu + "/" + czasPrzyjazdu + "/" + dataWaznosci + "/" + kodBledu;
+    }
+
+
+
+
+
 }

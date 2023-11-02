@@ -9,14 +9,16 @@ public class KodyBledowe {
     public static Integer wygenerujKodBledu(String panstwo){
         String slowo;
         if(panstwo.equals("ARZTOCKA")){
-            int tmp = random.nextInt(kody.length);
+            int tmp = random.nextInt(kody.length-1);
             if(tmp == 3){tmp = 4;}
-            slowo = kody[random.nextInt(tmp)];//TO NA RAZIE ZBĘDNE TODO:pokombinować cos z tym
+            //
+            //
+            // slowo = kody[random.nextInt(tmp)];//TO NA RAZIE ZBĘDNE TODO:pokombinować cos z tym
             return tmp;
         }else {
-            int tmp = random.nextInt(kody.length);
+            int tmp = random.nextInt(kody.length-1);
             if(tmp == 4){tmp = 3;}
-             slowo = kody[random.nextInt(tmp)];
+             //slowo = kody[random.nextInt(tmp)];
             return tmp;
         }
     }

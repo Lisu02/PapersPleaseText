@@ -176,6 +176,9 @@ public class ZbiorTwarzy {
             for (String s : badziewie) {
                 System.out.println(s);
             }
+            String[] cos = {"aka","baka","caka"};
+            System.out.println(random.nextInt(cos.length));
+            System.out.println(cos.length);
 
             String [][] test = {
                     {"imie","kod"},

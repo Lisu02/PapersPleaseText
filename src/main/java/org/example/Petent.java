@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.DaneGryDoGenerowania.ImionaPetentow;
+import org.example.DaneGryDoGenerowania.KodyBledowe;
 import org.example.DaneGryDoGenerowania.MiastaWydajaceDokument;
 import org.example.DaneGryDoGenerowania.Panstwa;
 import org.example.DokumentyPetenta.DowodOsobisty;
@@ -21,7 +22,7 @@ public class Petent {
     private String krajPochodzenia;
     private String kodPaszportu;
 
-    public int kodBledu; //Petent
+    private int kodBledu; //Petent
     private Paszport paszport;
     private PozwolenieNaWjazd pozwolenieNaWjazd;
     private DowodOsobisty dowodOsobisty;
@@ -35,9 +36,9 @@ public class Petent {
         this.krajPochodzenia = Panstwa.getPanstwo();
         this.miejsceWydaniaPaszportu = MiastaWydajaceDokument.getMiasto(this.krajPochodzenia,kodBledu);
         this.kodPaszportu = "ABCD-1234";
-        this.kodBledu = 0;
+        this.kodBledu = KodyBledowe.wygenerujKodBledu(krajPochodzenia);
         paszport = new Paszport();
-        paszport.setDanePaszportu(ImionaPetentow.giveImie(this.imie,kodBledu),dataUrodzin,this.miejsceWydaniaPaszportu,dataWygasnieciaPaszportu,krajPochodzenia,kodPaszportu,this.kodBledu);
+        paszport.setDanePaszportu(ImionaPetentow.giveImie(this.imie,kodBledu),dataUrodzin,MiastaWydajaceDokument.getMiasto(krajPochodzenia,kodBledu),dataWygasnieciaPaszportu,krajPochodzenia,kodPaszportu,this.kodBledu);
         if(krajPochodzenia.equals("ARZTOCKA")){dowodOsobisty = new DowodOsobisty(imie,dataUrodzin,kodBledu);}
         else {pozwolenieNaWjazd = new PozwolenieNaWjazd(imie,kodPaszportu,kodBledu);}
 

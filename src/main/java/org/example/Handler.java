@@ -59,12 +59,20 @@ public class Handler {
             case "ZATWIERDŹ WIZE":
                 terminal.bell();
                 System.out.println("ZATWIERDŹ WIZE");
+                menu.przerobieniPetenci += 1;
+                if(menu.petent.getKodBledu() == 0){menu.poprawniPetenci += 1;}
+                System.out.println(menu.petent.getKodBledu() + " dobre?");
                 menu.printGra(new Petent());
                 //menu.zmienPetent();
                 break;
             case "ODRZUĆ WIZE":
                 terminal.bell();
                 System.out.println("ODRZUĆ WIZE");
+                menu.przerobieniPetenci += 1;
+                if(menu.petent.getKodBledu() != 0){menu.poprawniPetenci += 1;}
+                System.out.println(menu.petent.getKodBledu() + " zle?");
+
+
                 menu.printGra(new Petent());
                 //menu.zmienPetent();
                 break;
@@ -78,13 +86,15 @@ public class Handler {
                 break;
             case "ARZTOCKA":
                 System.out.printf("KsiazkaArztocka");
-                menu.printKsiazka("");
+                menu.printKsiazka("KsiazkaArztocka");
                 break;
             case "OBRISTAN":
                 System.out.printf("KsiazkaObristan");
+                menu.printKsiazka("KsiazkaObristan");
                 break;
             case "ZJEDNOCZONA FEDERACJA":
                 System.out.printf("KsiazkaZjedno.Federacja");
+                menu.printKsiazka("KsiazkaZjednoczonaFederacja");
                 break;
             case "ZAWRÓĆ":
                 System.out.println("ZAWRÓĆ KSIAZKA");

@@ -34,6 +34,8 @@ public class Main {
 
     //public Terminal terminal;
     public static void main(String[] args) throws IOException {
+
+
         Font myFont = new Font("Monospaced",Font.BOLD,13);
         AWTTerminalFontConfiguration myFontConfiguration = AWTTerminalFontConfiguration.newInstance(myFont);
         DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();

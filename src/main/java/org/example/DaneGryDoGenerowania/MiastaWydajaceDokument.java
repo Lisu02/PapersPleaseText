@@ -9,18 +9,16 @@ public class MiastaWydajaceDokument {
     private static final Random random = new Random();
 
     public static String getMiasto(String kraj,int kodBledu){
-        if(kodBledu == 0){
+        if(kodBledu != 1){
             return switch (kraj) {
                 case "ARZTOCKA" -> arztockaMiasta[random.nextInt(arztockaMiasta.length)];
                 case "KOLECHIA" -> kolechiaMiasta[random.nextInt(kolechiaMiasta.length)];
                 case "ZJEDNOCZONA FEDERACJA" -> zjednoczFedMiasta[random.nextInt(zjednoczFedMiasta.length)];
                 default -> "";
             };
-        }else if(kodBledu == 1){
+        }else{
             return bledneMiasta[random.nextInt(bledneMiasta.length)];
         }
-        System.out.println("BŁĄD GET MIASTO KOD BŁĘDU NIE WSZEDŁ W WARUNEK! 22 linijka MiastaWydajaceDokument.java");
-        return "BŁĄD";
     }
 
 }
