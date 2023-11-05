@@ -14,6 +14,7 @@ import org.example.DokumentyPetenta.Paszport;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 
 import static java.util.Objects.isNull;
 
@@ -37,7 +38,7 @@ public class Menu {
 
     private String[] napisyMenu = {"NOWA GRA","OPCJE","WYJDZ Z GRY"};
     private String[] napisyOpcje = {"OPCJA 1","OPCJA 2","WRÓĆ"};
-        private String[] napisyGra = {"ZATWIERDŹ WIZE", "ODRZUĆ WIZE","ZAWRÓĆ","PODSTAWOWE ZASADY","PAŃSTWA"};
+        private String[] napisyGra = {"ZATWIERDŹ WIZE", "ODRZUĆ WIZE","PODSTAWOWE ZASADY","ARZTOCKA","KOLECHIA","ZJEDNOCZONA FEDERACJA"};
 
     private String[] napisyStrona0 = {"PODSTAWOWE ZASADY","PAŃSTWA"};
 
@@ -148,6 +149,7 @@ public class Menu {
         printGraPrzyciski();
 
         //System.out.println(Arrays.toString(imie));
+
 
         //RYSOWANIE KSIAZKI
         //printKsiazka(wybranaOpcja); //TODO ZMIENIC KODOWANIE
@@ -268,7 +270,7 @@ public class Menu {
                 textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
             }
             if(i<2){textGraphics.putString(111 + (i*15),50, napisyGra[i]);}
-            else {textGraphics.putString(220,i+36,napisyGra[i]);}
+            else {textGraphics.putString(217,i+36,napisyGra[i]);}
 
         }
     }
@@ -278,41 +280,17 @@ public class Menu {
     public void printKsiazka(String wybranaOpcja) throws IOException {
         printGra(petent);
         String [] stronaDoRysowania = Ksiazka.getStrona(wybranaOpcja);
-        this.wybranaOpcja = wybranaOpcja;
+        //this.wybranaOpcja = wybranaOpcja;
         //RYSOWANIE OBWODU KSIAZKI
         textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
         textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(80).withRows(1),'K');
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(1).withRows(30),'K');
         //RYSOWANIE DANYCH KSIAZKI
-        for(int i = 0 ; i<stronaDoRysowania.length; i++){
+        for(int i = 0; i< Objects.requireNonNull(stronaDoRysowania).length; i++){
             textGraphics.putString(162,38+i,stronaDoRysowania[i]);
         }
         terminal.flush();
-
-
-
-        //RYSOWANIE OPCJI KSIĄŻKI
-        //textGraphics.putString(new TerminalPosition(172,38),"ZAWRÓĆ");
-//        for (int i = 0; i < stronaDoRysowania.length; i++) {
-//            if (i == selectedOptionX) {
-//                textGraphics.setForegroundColor(TextColor.ANSI.BLACK);
-//                textGraphics.setBackgroundColor(TextColor.ANSI.WHITE);
-//            } else {
-//                textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
-//                textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
-//            }
-//            textGraphics.putString(220,i+37, stronaDoRysowania[i]);
-//        }
-        //textGraphics.fillRectangle(new TerminalPosition(0,26),terminalSize.withColumns(90).withRows(1),'X');
-        //textGraphics.fillRectangle(new TerminalPosition(0,0),terminalSize.withColumns(1).withRows(26),'X');
-        //textGraphics.fillRectangle(new TerminalPosition(240,6),terminalSize.withColumns(1).withRows(26),'X');
-
-        //RYSOWANIE ZAWARTOŚCI KSIAŻKI
-
-
-
-
     }
 
 

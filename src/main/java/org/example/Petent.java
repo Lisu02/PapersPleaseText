@@ -1,13 +1,11 @@
 package org.example;
 
-import org.example.DaneGryDoGenerowania.ImionaPetentow;
-import org.example.DaneGryDoGenerowania.KodyBledowe;
-import org.example.DaneGryDoGenerowania.MiastaWydajaceDokument;
-import org.example.DaneGryDoGenerowania.Panstwa;
+import org.example.DaneGryDoGenerowania.*;
 import org.example.DokumentyPetenta.DowodOsobisty;
 import org.example.DokumentyPetenta.Paszport;
 import org.example.DokumentyPetenta.PozwolenieNaWjazd;
 
+import javax.xml.crypto.Data;
 import java.util.Arrays;
 
 public class Petent {
@@ -29,18 +27,20 @@ public class Petent {
 
     //TODO:GENEROWANIE PETENTÓW AUTOMATYCZNIE (PRZYPADKOWE SCENARIUSZE)
     public Petent() {
-        this.imie = ImionaPetentow.getImie();
-        this.dataUrodzin = new String[]{"26", "8", "2002"};
-
-        this.dataWygasnieciaPaszportu = new String[]{"14", "1", "2024"};
         this.krajPochodzenia = Panstwa.getPanstwo();
-        this.miejsceWydaniaPaszportu = MiastaWydajaceDokument.getMiasto(this.krajPochodzenia,kodBledu);
-        this.kodPaszportu = "ABCD-1234";
         this.kodBledu = KodyBledowe.wygenerujKodBledu(krajPochodzenia);
+        this.imie = ImionaPetentow.getImie();
+        this.dataUrodzin = RandomDataUrodzenia.getDataUrodzenia();
+        this.dataWygasnieciaPaszportu = DataWaznosci.generateRandomDataWaznosciString().split("/");
+
+
+        this.kodPaszportu = KodPaszportu.getKodPaszportu();
+
+        this.miejsceWydaniaPaszportu = MiastaWydajaceDokument.getMiasto(this.krajPochodzenia,kodBledu);
         paszport = new Paszport();
         paszport.setDanePaszportu(ImionaPetentow.giveImie(this.imie,kodBledu),dataUrodzin,MiastaWydajaceDokument.getMiasto(krajPochodzenia,kodBledu),dataWygasnieciaPaszportu,krajPochodzenia,kodPaszportu,this.kodBledu);
         if(krajPochodzenia.equals("ARZTOCKA")){dowodOsobisty = new DowodOsobisty(imie,dataUrodzin,kodBledu);}
-        else {pozwolenieNaWjazd = new PozwolenieNaWjazd(imie,kodPaszportu,kodBledu);}
+        else {pozwolenieNaWjazd = new PozwolenieNaWjazd(imie,KodPaszportu.giveKodPaszportu(kodPaszportu,kodBledu),kodBledu);}
 
     }
 

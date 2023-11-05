@@ -71,10 +71,11 @@ public class Handler {
                 menu.przerobieniPetenci += 1;
                 if(menu.petent.getKodBledu() != 0){menu.poprawniPetenci += 1;}
                 System.out.println(menu.petent.getKodBledu() + " zle?");
-
-
                 menu.printGra(new Petent());
                 //menu.zmienPetent();
+                break;
+            case "STRONA WSTEPU":
+                menu.printKsiazka("STRONA WSTEPU");
                 break;
             case "PODSTAWOWE ZASADY":
                 System.out.println("PODSTAWOWE ZASADY");
@@ -88,9 +89,9 @@ public class Handler {
                 System.out.printf("KsiazkaArztocka");
                 menu.printKsiazka("KsiazkaArztocka");
                 break;
-            case "OBRISTAN":
-                System.out.printf("KsiazkaObristan");
-                menu.printKsiazka("KsiazkaObristan");
+            case "KOLECHIA":
+                System.out.printf("KsiazkaKolechia");
+                menu.printKsiazka("KsiazkaKolechia");
                 break;
             case "ZJEDNOCZONA FEDERACJA":
                 System.out.printf("KsiazkaZjedno.Federacja");

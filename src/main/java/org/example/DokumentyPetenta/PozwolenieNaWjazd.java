@@ -2,7 +2,9 @@ package org.example.DokumentyPetenta;
 
 
 import org.example.DaneGryDoGenerowania.CelePrzyjazdu;
+import org.example.DaneGryDoGenerowania.DataWaznosci;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class PozwolenieNaWjazd {
@@ -11,7 +13,7 @@ public class PozwolenieNaWjazd {
     private String kodPaszportu;
     private String celPrzyjazdu;
     private String czasPrzyjazdu;
-    private String dataWaznosci;
+    private String[] dataWaznosci;
     private int kodBledu;
     private Random random;
 
@@ -22,7 +24,7 @@ public class PozwolenieNaWjazd {
         random = new Random();
         celPrzyjazdu = CelePrzyjazdu.getCelPrzyjazdu();
         czasPrzyjazdu = CelePrzyjazdu.getCzasPrzyjazdu(celPrzyjazdu);
-        dataWaznosci = "TestDATA";
+        dataWaznosci = DataWaznosci.generateRandomDataWaznosciString().split("/");
     }
 
     public int getKodBledu(){
@@ -30,7 +32,7 @@ public class PozwolenieNaWjazd {
     }
     @Override
     public String toString(){
-        return imie +"/" + kodPaszportu + "/" + celPrzyjazdu + "/" + czasPrzyjazdu + "/" + dataWaznosci + "/" + kodBledu;
+        return imie +"/" + kodPaszportu + "/" + celPrzyjazdu + "/" + czasPrzyjazdu + "/" + Arrays.toString(dataWaznosci) + "/" + kodBledu;
     }
 
 

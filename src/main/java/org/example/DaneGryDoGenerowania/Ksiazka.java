@@ -7,17 +7,33 @@ public class Ksiazka {
     static{
         String[] stronaWstepu = {
 
-                "PODSTAWOWE ZASADY",
-                "MAPA PAŃSTW",
+                "┳┳┓┳┳┓┳┏┓┏┳┓┏┓┳┓┏┓┏┳┓┓ ┏┏┓  ┏┓┳┓┏┓┓┏┏┳┏┓┏┓ ",
+                "┃┃┃┃┃┃┃┗┓ ┃ ┣ ┣┫┗┓ ┃ ┃┃┃┃┃  ┃┃┣┫┏┛┗┫ ┃┣ ┃",
+                "┛ ┗┻┛┗┻┗┛ ┻ ┗┛┛┗┗┛ ┻ ┗┻┛┗┛  ┣┛┛┗┗┛┗┛┗┛┗┛┗┛",
+                "",
+                "┏┓┏┓┏┓┏┓┳┓┓┏  ┳  ┳┓┏┓┏┓┳┳┓ ┏┓┏┓┏┳┏┓",
+                "┏┛┣┫┗┓┣┫┃┃┗┫  ┃  ┣┫┣ ┃┓┃┃┃ ┣┫┃  ┃┣",
+                "┗┛┛┗┗┛┛┗┻┛┗┛  ┻  ┛┗┗┛┗┛┗┛┗┛┛┗┗┛┗┛┗┛",
+                "",
+                "┳┓┓ ┏┓  ┳┳┓┏┓┏┓┏┓┓┏┓┏┳┓┏┓┳┓┏┓┓ ┏",
+                "┃┃┃ ┣┫  ┃┃┃┗┓┃┃┣ ┃┫  ┃ ┃┃┣┫┃┃┃┃┃",
+                "┻┛┗┛┛┗  ┻┛┗┗┛┣┛┗┛┛┗┛ ┻ ┗┛┛┗┗┛┗┻┛",
+                "",
 
         };
         String[] stronaZasad = {
 
-                "Petenci muszą mieć paszport",
-                "Obywatele muszą mieć dowód osobisty",
-                "Cudzoziemcy muszą mieć zgode na wjazd",
-                "Wszystkie dane między dokumentami muszą się zgadzać",
-                "Miejsca wydania i dystrykty muszą być prawidłowe"
+                "| Petenci muszą mieć paszport",
+                "",
+                "| Obywatele muszą mieć dowód osobisty",
+                "",
+                "| Cudzoziemcy muszą mieć zgode na wjazd",
+                "",
+                "| Wszystkie dane między dokumentami muszą się zgadzać",
+                "",
+                "| Miejsca wydania i dystrykty muszą być prawidłowe",
+                "",
+                "| Dokumenty muszą być zgodne z terminem ważności"
 
         };
         String[] stronaPanstw = {
@@ -28,12 +44,16 @@ public class Ksiazka {
 
         };
         String[] stronaPanstwWydanieArztocka = {
-
-                "Miasta wydające paszport",
+                "┏┓┳┓┏┓┏┳┓┏┓┏┓┓┏┓┏┓",
+                "┣┫┣┫┏┛ ┃ ┃┃┃ ┃┫ ┣┫",
+                "┛┗┛┗┗┛ ┻ ┗┛┗┛┛┗┛┛┗",
+                "",
+                "MIASTA WYDAJĄCE PASZPORT",
                 "Orvech Vonor",
                 "Wsch.Grestin",
                 "Paradizna",
-                "Dystrykty",
+                " ",
+                "DYSTRYKTY",
                 "Ałtan",
                 "Vescillo",
                 "Burnton",
@@ -44,7 +64,10 @@ public class Ksiazka {
                 "Fardesto"
         };
         String[] stronaPanstwWydanieKolechia = {
-
+                "┓┏┓┏┓┓ ┏┓┏┓┓┏┳┏┓",
+                "┃┫ ┃┃┃ ┣ ┃ ┣┫┃┣┫",
+                "┛┗┛┗┛┗┛┗┛┗┛┛┗┻┛┗",
+                " ",
                 "Miasta wydajace paszport",
                 "Skal",
                 "Lorndaz",
@@ -52,7 +75,10 @@ public class Ksiazka {
 
         };
         String[] stronaPanstwWydanieZjednoczonaFederacja = {
-
+                "┏┓┏┳┏┓┳┓┳┓┏┓┏┓┏┓┏┓┳┓┏┓  ┏┓┏┓┳┓┏┓┳┓┏┓┏┓┏┳┏┓",
+                "┏┛ ┃┣ ┃┃┃┃┃┃┃ ┏┛┃┃┃┃┣┫  ┣ ┣ ┃┃┣ ┣┫┣┫┃  ┃┣┫",
+                "┗┛┗┛┗┛┻┛┛┗┗┛┗┛┗┛┗┛┛┗┛┗  ┻ ┗┛┻┛┗┛┛┗┛┗┗┛┗┛┛┗",
+                " ",
                 "Miasta wydające paszport",
                 "Great Rapid",
                 "Shingleton",
@@ -72,9 +98,11 @@ public class Ksiazka {
 //        return wynik;
 //    }
 
+    public void zmienZasady(){}
+
     public static String[] getStrona(String nazwaStrony){
         switch (nazwaStrony){
-            case "stronaWstepu":
+            case "STRONA WSTEPU":
                 return strony[0];
             case "PODSTAWOWE ZASADY":
                 return strony[1];
@@ -82,7 +110,7 @@ public class Ksiazka {
                 return strony[2];
             case "KsiazkaArztocka":
                 return  strony[3];
-            case "KsiazkaObristan":
+            case "KsiazkaKolechia":
                 return strony[4];
             case "KsiazkaZjednoczonaFederacja":
                 return strony[5];
