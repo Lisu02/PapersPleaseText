@@ -28,6 +28,40 @@ public class Menu {
                     "██║     ██║  ██║██║     ███████╗██║  ██║███████║    ██║     ███████╗███████╗██║  ██║███████║███████╗\n",
                     "╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝"};
 
+    String[] orzel = {
+
+            "oddddddddddddddddc'''''''''''''';oo;'''''.;odddddddddddddddd",
+            "xXNXXXXXXXXXXXXXXO:''''''''''..,oXKl''''',oKNXXXXXXXXXXXXXX0",
+            ";xXNNNXNNNNNNNXNNXO:''''''';llcd0kd:'''';dKNXXNNXNNNXNNXNXkc",
+            "';dKNXNNNNNNNNNNXNXOc,''',ckXNNKo'':;'':ONNNNXXNXXXNNXXNXx;'",
+            "'''lKNXXNNXXXNXXNNXNO;.'.;kNXNWO;,oo;':kXNNXXNXXXXNNNXNXx;''",
+            "''''lKNXXNNXXNXNNXXNO;.'.,kNXNNKdoo;.'oXNNNNNNNNXNNXXNKd;'''",
+            "'''''ckXNXXNNXXNXXXNO;.'';kNNNNXNk,.''oXNNNNNNNNXNNXN0l'''''",
+            "'''''.,dXNXNXXNXXNXNO:',';ONXNNXNO;'''oXNNNNNNXXXXXXOc''''''",
+            "''''''';xXNXXNNXNNXNXOOOOOKNXXXXNKOOOOKXXXXNNXNNXNXx:'''''''",
+            "'''''''',dKXNNXXNNNXXXXXXXXXNNNNNNNXNXNNNNNXNNNNNXx,''''''''",
+            "''''''''',l0NXXNNNNNNNNNNNNNNNNNNNNNNNNNNXNNXXNXKd;'''''''''",
+            "'''''''''''c0XXNNNNNNNNNNNNNNNNNXXXNNNXXXXNXXNX0l,''''''''''",
+            "''''''''''''cOXNNXXNNNNXNNNNNNNNNNNXXXXNXNNXNX0c''''''''''''",
+            "''''''''''''';oKNXXNNXNNNNNNNNNNNNNNNNNNXNXXKx:'''''''''''''",
+            "'''''''''''''''oKNXNNXXNNNNNNNNNNNNNNNNNXNNKo,''''''''''''''",
+            "''''''''''''''.,lOXNXNXNNNNNNNNNNNNNNNNNXNKo''''''''''''''''",
+            "''''''''''''''''':ONNXXNNNNNNXXXNXXNXNNXNKo,''''''''''''''''",
+            "'''''''''''''''''':ONXXNNNNNNXXXXXXXXNNXOl,'''''''''''''''''",
+            "''''''''''''''''''':xKNXNNNNNXXXXXXXXXNO:'''''''''''''''''''",
+            "'''''''''''''''''''.,dKNNNNNNNXXXXXXXXO:''''''''''''''''''''",
+            "''''''''''''''''''''''oKNXNNXNNNXNXNKo,'''''''''''''''''''''",
+            "'''''''''''''''''''''.cKNXNNNXXXNNXNKc.'''''''''''''''''''''",
+            "''''''''''''''''''''''lKNXXNNXXXXNXNKl''''''''''''''''''''''",
+            "''''''''''''''''''''':OXXNNXNNXXNXXNXKo'''''''''''''''''''''",
+            "''''''''''''''''''''.:kKXNXXNNXXNXNXK0o'''''''''''''''''''''",
+            "'''''''''''''''''''''';l0NXNNXXXNXNXd;,'''''''''''''''''''''",
+            "'''''''''''''''''''''';oxKNXXXXXXNXOo;''''''''''''''''''''''",
+            "'''''''''''''''''''''''.'oKNXNNXNKx;.'''''''''''''''''''''''",
+            "''''''''''''''''''''''''.,lOXNNNKo''''''''''''''''''''''''''",
+            "'''''''''''''''''''''''''''lO000d,.''''''''''''''''''''''''''"
+    };
+
 
     private DefaultTerminalFactory defaultTerminalFactory;
     private  Terminal terminal;
@@ -39,8 +73,6 @@ public class Menu {
     private String[] napisyMenu = {"NOWA GRA","OPCJE","WYJDZ Z GRY"};
     private String[] napisyOpcje = {"OPCJA 1","OPCJA 2","WRÓĆ"};
         private String[] napisyGra = {"ZATWIERDŹ WIZE", "ODRZUĆ WIZE","PODSTAWOWE ZASADY","ARZTOCKA","KOLECHIA","ZJEDNOCZONA FEDERACJA"};
-
-    private String[] napisyStrona0 = {"PODSTAWOWE ZASADY","PAŃSTWA"};
 
     private String[] napisDowodOsobisty = {
                     "┳┓┏┓┓ ┏┏┓┳┓  ┏┓┏┓┏┓┳┓┳┏┓┏┳┓┓┏",
@@ -68,8 +100,6 @@ public class Menu {
     private int selectedOptionY = 0;
     private int opcjeMenu = napisyOpcje.length;
     private int opcjeGraX = napisyGra.length;
-    private int opcjeGraY = 1;
-    private String wybranaOpcja = "stronaWstepu";
 
     public int przerobieniPetenci = 0;
     public int poprawniPetenci = 0;
@@ -90,15 +120,23 @@ public class Menu {
     }
 
     public void printObrazek()throws  IOException{
-        textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
+        textGraphics.setForegroundColor(new TextColor.RGB(204,46,45));
+        textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
+        //orzel[0] = orzel[0].replace(',',' ');
+        for(int i = 0 ; i < 30;i++){
+            orzel[i] = orzel[i].replace('\'',' ');
+            textGraphics.putString(86,i+1,orzel[i]);
+        }
+        textGraphics.setForegroundColor(new TextColor.RGB(220,222,219));
         textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
 
-        textGraphics.putString(70,20,obrazek[0]);
-        textGraphics.putString(70,21,obrazek[1]);
-        textGraphics.putString(70,22,obrazek[2]);
-        textGraphics.putString(70,23,obrazek[3]);
-        textGraphics.putString(70,24,obrazek[4]);
-        textGraphics.putString(70,25,obrazek[5]);
+
+        textGraphics.putString(70,32,obrazek[0]);
+        textGraphics.putString(70,33,obrazek[1]);
+        textGraphics.putString(70,34,obrazek[2]);
+        textGraphics.putString(70,35,obrazek[3]);
+        textGraphics.putString(70,36,obrazek[4]);
+        textGraphics.putString(70,37,obrazek[5]);
     }
 
     public void printMenu(int selectedOption) throws IOException {
@@ -114,7 +152,7 @@ public class Menu {
                 textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
             }
 
-            textGraphics.putString(111, 30 + i, napisyMenu[i]);
+            textGraphics.putString(111, 40 + i, napisyMenu[i]);
         }
         terminal.flush();
     }
@@ -131,7 +169,7 @@ public class Menu {
                 textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
             }
 
-            textGraphics.putString(111, 30 + i, napisyOpcje[i]);
+            textGraphics.putString(111, 40 + i, napisyOpcje[i]);
         }
 
         terminal.flush();
@@ -147,8 +185,6 @@ public class Menu {
 
         //RYSOWANIE OPCJI GRY ZATWIERDŹ I ODRZUĆ
         printGraPrzyciski();
-
-        //System.out.println(Arrays.toString(imie));
 
 
         //RYSOWANIE KSIAZKI
@@ -184,8 +220,8 @@ public class Menu {
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(80).withRows(1),'K');
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(1).withRows(30),'K');
         textGraphics.setBackgroundColor(TextColor.ANSI.BLUE);
-        textGraphics.putString(110,60,"Przerobieni petenci " + przerobieniPetenci);
-        textGraphics.putString(110,62,"Poprawni petenci " + poprawniPetenci);
+        textGraphics.putString(110,58,"Przerobieni petenci " + przerobieniPetenci);
+        textGraphics.putString(110,60,"Poprawni petenci " + poprawniPetenci);
         textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
 
 
@@ -204,9 +240,11 @@ public class Menu {
             textGraphics.putString(new TerminalPosition(45,3),napisPaszport[1]);
             textGraphics.putString(new TerminalPosition(45,4),napisPaszport[2]);
             //TWARZ
+            textGraphics.setForegroundColor(new TextColor.RGB(220,222,219));
             for(int i = 0 ; i < twarz.length ; i++){
                 textGraphics.putString(new TerminalPosition(2,i+2),twarz[i]);
             }
+            textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
             //DANE Z PASZPORTU
             int tmp = 0;
             for(int i = 2; i <= 12 ; i +=2)
@@ -269,7 +307,7 @@ public class Menu {
                 textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
                 textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
             }
-            if(i<2){textGraphics.putString(111 + (i*15),50, napisyGra[i]);}
+            if(i<2){textGraphics.putString(105 + (i*16),50, napisyGra[i]);}
             else {textGraphics.putString(217,i+36,napisyGra[i]);}
 
         }
@@ -287,6 +325,9 @@ public class Menu {
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(80).withRows(1),'K');
         textGraphics.fillRectangle(new TerminalPosition(160,35),terminalSize.withColumns(1).withRows(30),'K');
         //RYSOWANIE DANYCH KSIAZKI
+        if(wybranaOpcja.equals("KsiazkaArztocka")){textGraphics.setForegroundColor(new TextColor.RGB(59,72,59));}
+        if(wybranaOpcja.equals("KsiazkaKolechia")){textGraphics.setForegroundColor(new TextColor.RGB(85,37,63));}
+        if(wybranaOpcja.equals("KsiazkaZjednoczonaFederacja")){textGraphics.setForegroundColor(new TextColor.RGB(35,30,85));}
         for(int i = 0; i< Objects.requireNonNull(stronaDoRysowania).length; i++){
             textGraphics.putString(162,38+i,stronaDoRysowania[i]);
         }
